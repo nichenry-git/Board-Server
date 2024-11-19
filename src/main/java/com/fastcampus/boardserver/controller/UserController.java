@@ -16,12 +16,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-
 @RestController
 @RequestMapping("/users")
 @Log4j2
 public class UserController {
-
     private final UserServiceImpl userService;
     private static final ResponseEntity<LoginResponse> FAIL_RESPONSE = new ResponseEntity<LoginResponse>(HttpStatus.BAD_REQUEST);
 
@@ -29,7 +27,6 @@ public class UserController {
     public UserController(UserServiceImpl userService) {
         this.userService = userService;
     }
-
 
     @PostMapping("sign-up")
     @ResponseStatus(HttpStatus.CREATED)
